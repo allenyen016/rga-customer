@@ -13,6 +13,7 @@ And tests is written by Rest Assured.
 
 
 ---------------------------------------------------------------
+
 ##What you need 
 
 This project develop based on java 8 and use Maven to mange related dependencies, moreover, Which use Redis to store status of collaborators, so to run this project you also need Redis server installed on your machine.
@@ -25,33 +26,41 @@ Maven 3.0+
 Redis Server
 
 ----------------------------------------------------------------
+
 ##How to run it
 
 To run this project, execute mvn spring-boot:run   root folder of the repository, then checkout localhost:8080
+
 -----------------------------------------------------------------
+
 ##How to use it
+
 Invoke login API with HTTP Basic authentication to get an access token.
 Access cutromer data with token based authentication.
 you need place token in the header when requesting customer APIs.
 Now invoke customer APIs following URLs:
 
 localhost:8080/customer/list	GET
+
 localhost:8080/customer/		POST
+
 localhost:8080/customer/		PUT
+
 localhost:8080/customer/{id}	GET
+
 localhost:8080/customer/{id}	DELETE
 
-Notic:request and response are Json format by 
+Notice:request and response are Json format by 
 Cutromer class
 	
 Have fun!
+
 -------------------------------------------------------------------
+
 ##Reference
 
-Original sample is from "http://projects.spring.io/spring-boot/" 
+Read "http://docs.spring.io/spring-session/docs/current/reference/html5/guides/rest.html" finging find how Authentication implemented by spring session.
 
-ready "http://docs.spring.io/spring-session/docs/current/reference/html5/guides/rest.html" for find how Authentication implemented by spring session.
-
-ready "https://code.google.com/p/rest-assured/wiki/GettingStarted" for understanding how and what Rest-Assured do test and validation  of REST services.
+Read "https://code.google.com/p/rest-assured/wiki/GettingStarted" for finging how and what Rest-Assured do test and validation  of REST services.
 
 
