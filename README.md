@@ -1,37 +1,57 @@
 RGA Customer Module
 ===================
 
-##Scenario
-An insurance company needs a system to manage their customer data.  A software engineering team is working on the story below.
-
-*As a system user, I want to add new customer data into the system. After added, I can view a certain customer, and a customer list. Of course, I am also able to modify the data as well as remove it from the system.* 
-
-
 ##Instructions
-You are required to provide the functions of:
+This project is a simple REST application. wihch use authentication in two way, HTTP Basic authentication and token based authentication.
 
-1. Creating a single customer
-2. Updating a single customer
-3. Deleting a single customer
-4. Reading a single customer
-5. Listing all customers
-6. Authentication (assume that the system user is existing)
-6-1. Login - getting a login token. 
-6-2. Logout - destroying a login token.
+which provide login with a customer domain by HTTP Basic authentication.
 
-Except for point 6, those functions(end-points) should be secured, which need a credential to access.
+which provide logout and Basic operating by token Basic authentication.
 
-Please implement it in Java. Any frameworks are accepted.
+Which is implemented by Spring Boot, Spring Data Rest and Spring Security. 
+And tests is written by Rest Assured.
 
-##Acceptance criteria
-1. RESTful APIs
-2. JSON request and response
-3. Evidence of a BDD/TDD approach
-4. Clean, maintainable code adhering to SOLID principles
 
-##What we look for
-We are especially interested in how you structure your code. It should be fully testable and easy to be understood, extended and modified by others, and comply with the best object-oriented practices.
+---------------------------------------------------------------
+##What you need 
 
-**Please push your source code to GitHub, Bitbucket or other source control platforms, or just zip it and send it back to me.**
+This project develop based on java 8 and use Maven to mange related dependencies, moreover, Which use Redis to store status of collaborators, so to run this project you also need Redis server installed on your machine.
 
-Good luck!
+You need the following tools:
+
+A favorite text editor or IDE
+JDK 1.8 or later
+Maven 3.0+
+Redis Server
+
+----------------------------------------------------------------
+##How to run it
+
+To run this project, execute mvn spring-boot:run   root folder of the repository, then checkout localhost:8080
+-----------------------------------------------------------------
+##How to use it
+Invoke login API with HTTP Basic authentication to get an access token.
+Access cutromer data with token based authentication.
+you need place token in the header when requesting customer APIs.
+Now invoke customer APIs following URLs:
+
+localhost:8080/customer/list	GET
+localhost:8080/customer/		POST
+localhost:8080/customer/		PUT
+localhost:8080/customer/{id}	GET
+localhost:8080/customer/{id}	DELETE
+
+Notic:request and response are Json format by 
+Cutromer class
+	
+Have fun!
+-------------------------------------------------------------------
+##Reference
+
+Original sample is from "http://projects.spring.io/spring-boot/" 
+
+ready "http://docs.spring.io/spring-session/docs/current/reference/html5/guides/rest.html" for find how Authentication implemented by spring session.
+
+ready "https://code.google.com/p/rest-assured/wiki/GettingStarted" for understanding how and what Rest-Assured do test and validation  of REST services.
+
+
